@@ -58,6 +58,10 @@
 #include "nvdm.h"
 #endif
 
+#ifdef MTK_SYSTEM_HANG_TRACER_ENABLE
+#include "systemhang_tracer.h"
+#endif /* MTK_SYSTEM_HANG_TRACER_ENABLE */
+
 extern void tickless_init(void);
 
 /**
@@ -175,6 +179,8 @@ static void prvSetupHardware(void)
 #endif
 
     hal_flash_init();
+
+    hal_rtc_init();
 }
 
 /**
@@ -225,5 +231,9 @@ void system_init(void)
 
     /* generate random seed */
     _main_sys_random_init();
+
+#ifdef MTK_SYSTEM_HANG_TRACER_ENABLE
+    systemhang_tracer_init(25);
+#endif /* MTK_SYSTEM_HANG_TRACER_ENABLE */
 }
 

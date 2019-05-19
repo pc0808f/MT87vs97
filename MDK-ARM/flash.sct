@@ -27,12 +27,12 @@
 ;******************************************************************************************
 ;XIP_CODE definition: 
 ;    - XIP_CODE_BASE: 
-;    - XIP_CODE_SIZE:  512K
+;    - XIP_CODE_SIZE:  1972K
 ;******************************************************************************************
 #define XIP_CODE_BASE 0x10079000
-#define XIP_CODE_SIZE 0x000BF000
+#define XIP_CODE_SIZE 0x001ED000
 
-#define N9_AND_XIP_CODE_SIZE 0x00138000
+#define N9_AND_XIP_CODE_SIZE 0x00266000
 
 ;******************************************************************************************
 ;SYSRAM definition: 

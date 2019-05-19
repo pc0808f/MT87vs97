@@ -38,9 +38,9 @@
 #define LOADER_LENGTH           0x8000        /*  32KB */
 #define RESERVED_LENGTH         0x8000        /*  32KB */
 #define N9_RAMCODE_LENGTH       0x69000       /* 420KB */
-#define CM4_CODE_LENGTH         0xBF000       /* 764KB */
-#define FOTA_LENGTH             0xBF000       /* 764KB */
-#define NVDM_LENGTH             0x9000        /*  36KB */
+#define CM4_CODE_LENGTH         0x1ED000      /* 1972KB */
+#define FOTA_LENGTH             0x18A000      /* 1576KB */
+#define NVDM_LENGTH             0x10000       /*  64KB */
 
 #define LOADER_BASE             0x0
 #define RESERVED_BASE           (LOADER_BASE     + LOADER_LENGTH)

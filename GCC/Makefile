@@ -31,39 +31,41 @@
 # OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
 # MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
 #
- 
-#######################################################
+###################################################
 # Project vairables assignment
 
 SOURCE_DIR = ../../../../..
-PWD= $(shell pwd)
+
+PWD        = $(shell pwd)
 SDK_PATH    = $(abspath $(PWD)/$(SOURCE_DIR))
 
-FEATURE = feature.mk
+FEATURE    = feature.mk
 include $(FEATURE)
 
 DEBUG = 0
+ifeq ($(DEBUG), 1)
+DEBUG_IO = 1
+endif
+
 FLOAT_TYPE = hard
 BUILD_DIR = $(PWD)/build
 
 # Project name
-PROJ_NAME = $(shell basename $(dir $(PWD)))
+PROJ_NAME       = $(notdir $(abspath $(dir $(PWD))))
 PROJ_PATH = $(abspath $(dir $(PWD)))/GCC
 OUTPATH = $(PWD)/build
-
 # LD Flags
 LDFLAGS = $(ALLFLAGS) $(FPUFLAGS) --specs=nano.specs -lnosys -nostartfiles
 LDFLAGS += -Wl,-wrap=malloc -Wl,-wrap=calloc -Wl,-wrap=realloc -Wl,-wrap=free
-LDFLAGS += -Wl,-T./mt7687_flash.ld -Wl,--gc-sections
+
+LDFLAGS += -Wl,-Tmt7687_flash.ld -Wl,--gc-sections
+
 ifeq ($(DEBUG_IO), 1)
 LDFLAGS += --specs=rdimon.specs -lrdimon
 CFLAGS += -DDEBUG_IO
 endif
-
-
-#######################################################
-# Include Module
-
+###################################################
+# module include
 # Gloabl Config
 -include $(SOURCE_DIR)/.config
 # IC Config
@@ -78,46 +80,9 @@ include $(SOURCE_DIR)/kernel/rtos/FreeRTOS/module.mk
 
 # kernel service files
 include $(SOURCE_DIR)/kernel/service/module.mk
-
 # HAL driver files
 include $(SOURCE_DIR)/driver/chip/mt7687/module.mk
 
-# NVDM files
-include $(SOURCE_DIR)/middleware/MTK/nvdm/module.mk
-
-# Minisupp Config
-ifneq ($(wildcard $(strip $(SOURCE_DIR))/middleware/MTK/minisupp/),)
-include $(SOURCE_DIR)/middleware/MTK/minisupp/module.mk
-else
-include $(SOURCE_DIR)/prebuilt/middleware/MTK/minisupp/module.mk
-endif
-
-
-#include lwip
-include $(SOURCE_DIR)/middleware/third_party/lwip/module.mk
-
-#include dhcpd
-include $(SOURCE_DIR)/middleware/MTK/dhcpd/module.mk
-
-# wifi src
-include $(SOURCE_DIR)/middleware/MTK/wifi_service/combo/module.mk
-#connsys_module
-include $(SOURCE_DIR)/middleware/MTK/connsys/module.mk
-
-# Libraries
-include $(SOURCE_DIR)/project/common/bsp_ex/module.mk
-ifeq ($(MTK_MINICLI_ENABLE),y)
-include $(SOURCE_DIR)/middleware/MTK/minicli/module.mk
-endif
-
-include $(SOURCE_DIR)/driver/board/mt76x7_hdk/util/module.mk
-
-#######################################################
-# Main APP files
-
-C_OBJS = $(C_FILES:%.c=$(BUILD_DIR)/%.o)
-CXX_OBJS        = $(CXX_FILES:%.cpp=$(BUILD_DIR)/%.o)
-S_OBJS = $(S_FILES:%.s=$(BUILD_DIR)/%.o)
 
 # Main APP files
 APP_PATH        = $(patsubst $(SDK_PATH)/%,%,$(abspath $(dir $(PWD))))
@@ -125,37 +90,33 @@ $(info $(SDK_PATH))
 $(info $(PROJ_PATH))
 $(info $(APP_PATH))
 APP_PATH_SRC = $(APP_PATH)/src
-
-APP_FILES += $(APP_PATH_SRC)/main.c
-APP_FILES += $(APP_PATH_SRC)/regions_init.c
-APP_FILES += $(APP_PATH_SRC)/wifi_lwip_helper.c
-APP_FILES += $(APP_PATH_SRC)/network_default_config.c
+APP_FILES = $(APP_PATH_SRC)/main.c
 APP_FILES += $(APP_PATH_SRC)/ept_gpio_var.c
 APP_FILES += $(APP_PATH_SRC)/ept_eint_var.c
 APP_FILES += $(APP_PATH_SRC)/system_mt7687.c
 APP_FILES += $(APP_PATH_SRC)/sys_init.c
+APP_FILES += $(APP_PATH_SRC)/regions_init.c
 APP_FILES += $(APP_PATH)/GCC/syscalls.c
-
 C_FILES += $(APP_FILES)
 
 # add startup file to build
 S_FILES += $(APP_PATH)/GCC/startup_mt7687.s
 
-#######################################################
-# Include path
+C_OBJS = $(C_FILES:%.c=$(BUILD_DIR)/%.o)
+CXX_OBJS        = $(CXX_FILES:%.cpp=$(BUILD_DIR)/%.o)
+S_OBJS = $(S_FILES:%.s=$(BUILD_DIR)/%.o)
 
 # include path
 CFLAGS += -I$(SOURCE_DIR)/driver/chip/mt7687/inc
 CFLAGS += -I$(SOURCE_DIR)/driver/chip/inc
-CFLAGS += -I$(SOURCE_DIR)/middleware/MTK/wifi_service/combo/inc
 CFLAGS += -I$(SOURCE_DIR)/$(APP_PATH)/inc
 CFLAGS += -I$(SOURCE_DIR)/driver/CMSIS/Include
 CFLAGS += -I$(SOURCE_DIR)/driver/CMSIS/Device/MTK/mt7687/Include
 CFLAGS += -I$(SOURCE_DIR)/driver/board/mt76x7_hdk/ept/inc
-
-#######################################################
+###################################################
+# Libraries
+###################################################
 # Rules
-
 .PHONY: proj clean $(MODULE_PATH)
 
 all: cleanlog proj
@@ -179,7 +140,9 @@ $(OUTPATH)/$(PROJ_NAME).elf: $(C_OBJS) $(CXX_OBJS) $(S_OBJS) $(LIBS)
 	@if [ -e "$(OUTPATH)/$(PROJ_NAME).dis" ]; then rm -f "$(OUTPATH)/$(PROJ_NAME).dis"; fi
 	@if [ -e "$(OUTPATH)/$(PROJ_NAME).hex" ]; then rm -f "$(OUTPATH)/$(PROJ_NAME).hex"; fi
 	@if [ -e "$(OUTPATH)/$(PROJ_NAME).bin" ]; then rm -f "$(OUTPATH)/$(PROJ_NAME).bin"; fi
-	@$(CC) $(LDFLAGS) -Wl,--start-group $^ -Wl,--end-group -Wl,-Map=$(OUTPATH)/$(PROJ_NAME).map -lm -o $@ >>$(ERR_LOG)
+	@echo $(patsubst $(SDK_PATH)/%,$(SOURCE_DIR)/%, $(LDFLAGS) -Wl,--start-group $^ -Wl,--end-group -Wl,-Map=$(patsubst $(SDK_PATH)/%,$(SOURCE_DIR)/%,$(OUTPATH)/$(PROJ_NAME).map) -lm -o $@) > $(OUTPATH)/link_option.tmp
+	@$(CC) @$(OUTPATH)/link_option.tmp 2>>$(ERR_LOG)
+	@rm -f $(OUTPATH)/link_option.tmp
 	@$(OBJDUMP) -D $(OUTPATH)/$(PROJ_NAME).elf > $(OUTPATH)/$(PROJ_NAME).dis
 	@$(OBJCOPY) -O ihex $(OUTPATH)/$(PROJ_NAME).elf $(OUTPATH)/$(PROJ_NAME).hex
 	@$(OBJCOPY) -O binary $(OUTPATH)/$(PROJ_NAME).elf $(OUTPATH)/$(PROJ_NAME).bin

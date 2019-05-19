@@ -17,15 +17,15 @@
         <debug>1</debug>
         <option>
           <name>ExePath</name>
-          <state>$PROJ_DIR$\..\..\..\..\..\out_iar\mt7687_hdk\freertos_initialize_main_features\Debug\Exe</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\out_iar\mt7697_hdk\freertos_create_thread\Debug\Exe</state>
         </option>
         <option>
           <name>ObjPath</name>
-          <state>$PROJ_DIR$\..\..\..\..\..\out_iar\mt7687_hdk\freertos_initialize_main_features\Debug\Obj</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\out_iar\mt7697_hdk\freertos_create_thread\Debug\Obj</state>
         </option>
         <option>
           <name>ListPath</name>
-          <state>$PROJ_DIR$\..\..\..\..\..\out_iar\mt7687_hdk\freertos_initialize_main_features\Debug\List</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\out_iar\mt7697_hdk\freertos_create_thread\Debug\List</state>
         </option>
         <option>
           <name>GEndianMode</name>
@@ -181,16 +181,8 @@
         <debug>1</debug>
         <option>
           <name>CCDefines</name>
-          <state>PRODUCT_VERSION=7687</state>
-          <state>MTK_FLASH_DIRECT_DL</state>
-          <state>MTK_PATCH_DL_ENABLE</state>
-          <state>MTK_MINISUPP_ENABLE</state>
-          <state>MTK_BSPEXT_ENABLE</state>
-          <state>MTK_LWIP_ENABLE</state>
           <state>MTK_DEBUG_LEVEL_INFO</state>
-          <state>MTK_NVDM_ENABLE</state>
-          <state>FREERTOS_ENABLE</state> 
-          <state>MTK_WIFI_REPEATER_ENABLE</state>
+          <state>PRODUCT_VERSION=7697</state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -251,7 +243,7 @@
         <option>
           <name>CCAllowList</name>
           <version>1</version>
-          <state>11111110</state>
+          <state>10010100</state>
         </option>
         <option>
           <name>CCDebugInfo</name>
@@ -320,37 +312,15 @@
         <option>
           <name>CCIncludePath2</name>
           <state>$PROJ_DIR$\..\inc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\driver\CMSIS\Include</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\driver\CMSIS\Device\MTK\mt7687\Include</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\driver\chip\inc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\driver\chip\mt7687\inc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\driver\chip\mt7687\src\common\include</state>
           <state>$PROJ_DIR$\..\..\..\..\..\kernel\service\inc</state>
           <state>$PROJ_DIR$\..\..\..\..\..\kernel\service\syslog\inc</state>
           <state>$PROJ_DIR$\..\..\..\..\..\kernel\rtos\FreeRTOS\Source\include</state>
           <state>$PROJ_DIR$\..\..\..\..\..\kernel\rtos\FreeRTOS\Source\portable\IAR\ARM_CM4F</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\kernel\rtos\FreeRTOS\inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\driver\CMSIS\Device\MTK\mt7687\Include</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\driver\CMSIS\Include</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\include</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\ports\include</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\driver\chip\inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\driver\chip\mt7687\inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\wifi_service\combo\inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\dhcpd\inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\minicli\inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\minisupp\inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\prebuilt\middleware\MTK\minisupp\inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\driver\chip\inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\driver\chip\mt7687\src\common\include</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\include</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\ports\include</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\include\lwip</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\project\common\bsp_ex\inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\nvdm\inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\nvdm_core\inc_core</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\ping\inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\smtcn\inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\iperf\inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\project\mt7687_hdk\templates\freertos_initialize_main_features\inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\driver\chip\mt7687\inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\driver\board\mt76x7_hdk\util\inc</state>
-          <state>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\wifi_service\combo\inc</state>
           <state>$PROJ_DIR$\..\..\..\..\..\driver\board\mt76x7_hdk\ept\inc</state>
           <state>$PROJ_DIR$\..\..\..\..\..\driver\board\mt76x7_hdk\external_flash\inc</state>
 		  <state>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\connsys\inc</state>
@@ -373,16 +343,16 @@
         </option>
         <option>
           <name>CCOptLevel</name>
-          <state>3</state>
+          <state>2</state>
         </option>
         <option>
           <name>CCOptStrategy</name>
           <version>0</version>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>CCOptLevelSlave</name>
-          <state>3</state>
+          <state>2</state>
         </option>
         <option>
           <name>CompilerMisraRules98</name>
@@ -457,7 +427,7 @@
         <option>
           <name>CCOptStrategySlave</name>
           <version>0</version>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>CCGuardCalls</name>
@@ -649,7 +619,7 @@
         </option>
         <option>
           <name>OOCOutputFile</name>
-          <state>freertos_initialize_main_features.bin</state>
+          <state>freertos_create_thread.bin</state>
         </option>
         <option>
           <name>OOCCommandLineProducer</name>
@@ -704,7 +674,7 @@
         </option>
         <option>
           <name>IlinkOutputFile</name>
-          <state>freertos_initialize_main_features.out</state>
+          <state>freertos_create_thread.out</state>
         </option>
         <option>
           <name>IlinkDebugInfoEnable</name>
@@ -808,6 +778,7 @@
           <state>--redirect calloc=pvPortCalloc</state>
           <state>--redirect realloc=pvPortRealloc</state>
           <state>--redirect free=vPortFree</state>
+          <state></state>
         </option>
         <option>
           <name>IlinkLowLevelInterfaceSlave</name>
@@ -1039,7 +1010,7 @@
         </option>
         <option>
           <name>Input description</name>
-          <state>Automatic choice of formatter.</state>
+          <state></state>
         </option>
         <option>
           <name>Output variant</name>
@@ -1048,7 +1019,7 @@
         </option>
         <option>
           <name>Output description</name>
-          <state>Automatic choice of formatter.</state>
+          <state></state>
         </option>
         <option>
           <name>GOutputBinary</name>
@@ -1070,7 +1041,7 @@
         </option>
         <option>
           <name>RTDescription</name>
-          <state>Use the normal configuration of the C/C++ runtime library. No locale interface, C locale, no file descriptor support, no multibytes in printf and scanf, and no hex floats in strtod.</state>
+          <state></state>
         </option>
         <option>
           <name>OGProductVersion</name>
@@ -1078,7 +1049,7 @@
         </option>
         <option>
           <name>OGLastSavedByProductVersion</name>
-          <state>7.50.1.10270</state>
+          <state></state>
         </option>
         <option>
           <name>GeneralEnableMisra</name>
@@ -1090,11 +1061,11 @@
         </option>
         <option>
           <name>OGChipSelectEditMenu</name>
-          <state>Default	None</state>
+          <state></state>
         </option>
         <option>
           <name>GenLowLevelInterface</name>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>GEndianModeBE</name>
@@ -1124,12 +1095,12 @@
         </option>
         <option>
           <name>RTConfigPath2</name>
-          <state>$TOOLKIT_DIR$\INC\c\DLib_Config_Normal.h</state>
+          <state></state>
         </option>
         <option>
           <name>GBECoreSlave</name>
           <version>22</version>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>OGUseCmsis</name>
@@ -1150,7 +1121,7 @@
         </option>
         <option>
           <name>GFPUDeviceSlave</name>
-          <state>Default	None</state>
+          <state>-</state>
         </option>
         <option>
           <name>FPU2</name>
@@ -1169,7 +1140,7 @@
         <option>
           <name>GFPUCoreSlave2</name>
           <version>22</version>
-          <state>0</state>
+          <state>1</state>
         </option>
       </data>
     </settings>
@@ -1340,7 +1311,7 @@
         </option>
         <option>
           <name>CCOptLevelSlave</name>
-          <state>3</state>
+          <state>1</state>
         </option>
         <option>
           <name>CompilerMisraRules98</name>
@@ -1662,7 +1633,7 @@
         </option>
         <option>
           <name>IlinkOutputFile</name>
-          <state>freertos_initialize_main_features.out</state>
+          <state>freertos_create_thread.out</state>
         </option>
         <option>
           <name>IlinkDebugInfoEnable</name>
@@ -1959,10 +1930,7 @@
     </settings>
   </configuration>
   <group>
-    <name>apps</name>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\driver\board\mt76x7_hdk\ept\src\bsp_gpio_ept_config.c</name>
-    </file>
+    <name>app</name>
     <file>
       <name>$PROJ_DIR$\..\src\ept_eint_var.c</name>
     </file>
@@ -1978,62 +1946,11 @@
     <file>
       <name>$PROJ_DIR$\..\src\sys_init.c</name>
     </file>
-    <file>
-      <name>$PROJ_DIR$\..\src\network_default_config.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\src\wifi_lwip_helper.c</name>
-    </file>
   </group>
   <group>
-    <name>bsp</name>
-	<file>
-	  <name>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\wifi_service\combo\src\wifi_cm4_scan.c</name>
-	</file>
-	<file>
-	  <name>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\wifi_service\combo\src\wifi_repeater.c</name>
-	</file>
-	<file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\wifi_service\combo\src\inband_queue_option.c</name>
-    </file>
+    <name>board</name>
     <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\wifi_service\combo\src\get_profile_string.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\prebuilt\middleware\MTK\wifi_service\combo\lib\wifi_supp\libwifi_CM4_IAR.a</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\wifi_service\combo\src\misc.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\wifi_service\combo\src\wifi_os_ext\os_util.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\wifi_service\combo\src\wifi_os_ext\os_utils.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\wifi_service\combo\src\init\wifi_default_config.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\wifi_service\combo\src\wifi_inband_cli.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\wifi_service\combo\src\init\wifi_init.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\wifi_service\combo\src\wifi_os_api.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\wifi_service\combo\src\wifi_profile.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\wifi_service\combo\src\wifi_wps.c</name>
-    </file>
-  </group>
-  <group>
-    <name>bspex</name>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\common\bsp_ex\src\lp_ex_sleep.c</name>
+      <name>$PROJ_DIR$\..\..\..\..\..\driver\board\mt76x7_hdk\ept\src\bsp_gpio_ept_config.c</name>
     </file>
   </group>
   <group>
@@ -2046,27 +1963,12 @@
     </file>
   </group>
   <group>
-    <name>dhcpd</name>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\dhcpd\src\dhcpd.c</name>
-    </file>
-  </group>
-  <group>
     <name>driver</name>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\..\driver\chip\mt7687\src\hal_misc.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\..\driver\board\mt76x7_hdk\external_flash\src\bsp_flash_config.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\connsys\src\connsys_bus.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\connsys\src\connsys_driver.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\connsys\src\connsys_util.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\..\driver\chip\mt7687\src\common\cos_api.c</name>
@@ -2166,9 +2068,12 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\..\driver\chip\mt7687\src\hal_sha.c</name>
-    </file>
+    </file>  
     <file>
       <name>$PROJ_DIR$\..\..\..\..\..\driver\chip\mt7687\src\hal_spi_master.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\driver\chip\mt7687\src\hal_spi_slave.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\..\driver\chip\mt7687\src\common\hal_spim.c</name>
@@ -2189,16 +2094,13 @@
       <name>$PROJ_DIR$\..\..\..\..\..\driver\chip\mt7687\src\hal_wdt.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\driver\chip\mt7687\src\hci_log.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\..\..\..\driver\chip\mt7687\src\common\i2c.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\..\driver\chip\mt7687\src\common\ir_tx.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\prebuilt\driver\chip\mt7687\lib\libhal_core_CM4_IAR.a</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\prebuilt\driver\chip\mt7687\lib\libhal_protected_CM4_IAR.a</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\..\driver\chip\mt7687\src\common\low_hal_gpio.c</name>
@@ -2247,27 +2149,6 @@
     </file>
   </group>
   <group>
-    <name>iarfs</name>
-    <file>
-      <name>$EW_DIR$\arm\src\lib\close.c</name>
-    </file>
-    <file>
-      <name>$EW_DIR$\arm\src\lib\lseek.c</name>
-    </file>
-    <file>
-      <name>$EW_DIR$\arm\src\lib\open.c</name>
-    </file>
-    <file>
-      <name>$EW_DIR$\arm\src\lib\read.c</name>
-    </file>
-    <file>
-      <name>$EW_DIR$\arm\src\lib\remove.c</name>
-    </file>
-    <file>
-      <name>$EW_DIR$\arm\src\lib\write.c</name>
-    </file>
-  </group>
-  <group>
     <name>kernel</name>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\..\kernel\service\src\context_info_save.c</name>
@@ -2282,6 +2163,9 @@
       <name>$PROJ_DIR$\..\..\..\..\..\kernel\service\src\toi.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\kernel\rtos\FreeRTOS\Source\portable\GCC\mt7687\port_tick.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\..\..\..\kernel\rtos\FreeRTOS\Source\event_groups.c</name>
     </file>
     <file>
@@ -2292,9 +2176,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\..\kernel\rtos\FreeRTOS\Source\portable\IAR\ARM_CM4F\port.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\kernel\rtos\FreeRTOS\Source\portable\IAR\mt7687\port_tick.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\..\kernel\rtos\FreeRTOS\Source\portable\IAR\ARM_CM4F\portasm.s</name>
@@ -2312,190 +2193,16 @@
   <group>
     <name>kservice</name>
     <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\kernel\service\src\os_cli.c</name>
-    </file>
-    <file>
       <name>$PROJ_DIR$\..\..\..\..\..\kernel\service\src\os_port_callback.c</name>
     </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\kernel\service\syslog\src\syslog_cli.c</name>
-    </file>
   </group>
   <group>
-    <name>lwip</name>
+    <name>lib</name>
     <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\altcp.c</name>
+      <name>$PROJ_DIR$\..\..\..\..\..\prebuilt\driver\chip\mt7687\lib\libhal_core_CM4_IAR.a</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\altcp_alloc.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\altcp_tcp.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\api\api_lib.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\api\api_msg.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\ipv4\autoip.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\def.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\ipv4\dhcp.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\ipv6\dhcp6.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\dns.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\api\err.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\ipv4\etharp.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\netif\ethernet.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\ports\ethernetif.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\ipv6\ethip6.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\ipv4\icmp.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\ipv6\icmp6.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\api\if_api.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\ipv4\igmp.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\ipv6\inet6.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\inet_chksum.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\init.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\ip.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\ipv4\ip4.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\ipv4\ip4_addr.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\ipv4\ip4_frag.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\ipv6\ip6.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\ipv6\ip6_addr.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\ipv6\ip6_frag.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\ports\lwip_cli.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\ports\lwip_log.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\mem.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\memp.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\ipv6\mld6.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\ipv6\nd6.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\api\netbuf.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\api\netdb.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\netif.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\api\netifapi.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\pbuf.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\raw.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\api\sockets.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\stats.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\sys.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\ports\sys_arch.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\tcp.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\tcp_in.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\tcp_out.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\api\tcpip.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\timeouts.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\third_party\lwip\src\core\udp.c</name>
-    </file>
-  </group>
-  <group>
-    <name>minisupp</name>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\prebuilt\middleware\MTK\minisupp\lib\libminisupp_CM4_IAR.a</name>
-    </file>
-  </group>
-  <group>
-    <name>N9</name>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\tools\iar\mt7687\N9\mt76X7_n9_image.c</name>
-    </file>
-  </group>
-  <group>
-    <name>nvdm</name>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\prebuilt\middleware\MTK\nvdm\lib\libnvdm_CM4_IAR.a</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\middleware\MTK\nvdm\src\nvdm_port.c</name>
+      <name>$PROJ_DIR$\..\..\..\..\..\prebuilt\driver\chip\mt7687\lib\libhal_protected_CM4_IAR.a</name>
     </file>
   </group>
 </project>
