@@ -48,22 +48,46 @@
 #include "sys_init.h"
 #include "task_def.h"
 
-#include "wifi_lwip_helper.h"
-#include "wifi_api.h"
+/* Private typedef -----------------------------------------------------------*/
+/* Private define ------------------------------------------------------------*/
+/* Private macro -------------------------------------------------------------*/
 
-/* Create the log control block as user wishes. Here we use 'template' as module name.
- * User needs to define their own log control blocks as project needs.
- * Please refer to the log dev guide under /doc folder for more details.
- */
-log_create_module(template, PRINT_LEVEL_INFO);
+/* Private variables ---------------------------------------------------------*/
+
+/* Private functions ---------------------------------------------------------*/
+static void vTestTask(void *pvParameters);
+log_create_module(freertos, PRINT_LEVEL_INFO);
+
+#define mainCHECK_DELAY ( ( portTickType ) 1000 / portTICK_RATE_MS )
 
 /**
-* @brief       Main function
-* @param[in]   None.
+* @brief       Task main function
+* @param[in]   pvParameters: Pointer that will be used as the parameter for the task being created.
 * @return      None.
 */
+static void vTestTask(void *pvParameters)
+{
+    uint32_t idx = (int)pvParameters;
+    portTickType xLastExecutionTime, xDelayTime;
+
+    xLastExecutionTime = xTaskGetTickCount();
+    xDelayTime = (1 << idx) * mainCHECK_DELAY;
+
+    while (1) {
+        vTaskDelayUntil(&xLastExecutionTime, xDelayTime);
+        LOG_I(freertos, "Hello World from %d\n\r", idx);
+
+        /* This is for auto-test */
+        if (idx == 3) {
+            LOG_I(freertos, "example project test success.\n\r");
+        }
+    }
+}
+
 int main(void)
 {
+    int idx;
+
     /* Do system initialization, eg: hardware, nvdm and random seed. */
     system_init();
 
@@ -75,48 +99,14 @@ int main(void)
      */
     log_init(NULL, NULL, NULL);
 
-    LOG_I(template, "start to create task.\n");
-
-    /* User initial the parameters for wifi initial process,  system will determin which wifi operation mode
-     * will be started , and adopt which settings for the specific mode while wifi initial process is running*/
-    wifi_config_t config = {0};
-    config.opmode = WIFI_MODE_STA_ONLY;
-    strcpy((char *)config.sta_config.ssid, (const char *)"MTK_STA");
-    strcpy((char *)config.sta_config.password, (const char *)"12345678");
-    config.sta_config.ssid_length = strlen((const char *)config.sta_config.ssid);
-    config.sta_config.password_length = strlen((const char *)config.sta_config.password);
-
-
-    /* Initialize wifi stack and register wifi init complete event handler,
-     * notes:  the wifi initial process will be implemented and finished while system task scheduler is running.*/
-    wifi_init(&config, NULL);
-
-    /* Tcpip stack and net interface initialization,  dhcp client, dhcp server process initialization*/
-    lwip_network_init(config.opmode);
-    lwip_net_start(config.opmode);
-
-    /* As for generic HAL init APIs like: hal_uart_init(), hal_gpio_init() and hal_spi_master_init() etc,
-     * user can call them when they need, which means user can call them here or in user task at runtime.
-     */
-
-    /* Create a user task for demo when and how to use wifi config API to change WiFI settings,
-    Most WiFi APIs must be called in task scheduler, the system will work wrong if called in main(),
-    For which API must be called in task, please refer to wifi_api.h or WiFi API reference.
-    xTaskCreate(user_wifi_app_entry,
-                UNIFY_USR_DEMO_TASK_NAME,
-                UNIFY_USR_DEMO_TASK_STACKSIZE / 4,
-                NULL, UNIFY_USR_DEMO_TASK_PRIO, NULL);
-    user_wifi_app_entry is user's task entry function, which may be defined in another C file to do application job.
-    UNIFY_USR_DEMO_TASK_NAME, UNIFY_USR_DEMO_TASK_STACKSIZE and UNIFY_USR_DEMO_TASK_PRIO should be defined
-    in task_def.h. User needs to refer to example in task_def.h, then makes own task MACROs defined.
-    */
+    /* Create 4 tasks*/
+    for (idx = 0; idx < 4; idx++) {
+        xTaskCreate(vTestTask, FREERTOS_EXAMPLE_TASK_NAME, FREERTOS_EXAMPLE_TASK_STACKSIZE / sizeof(portSTACK_TYPE), (void *)idx, FREERTOS_EXAMPLE_TASK_PRIO, NULL);
+    }
 
 
     /* Call this function to indicate the system initialize done. */
     SysInitStatus_Set();
-
-    /* This is for hal_examples auto-test */
-    LOG_I(template, "example project test success.\n");
 
     /* Start the scheduler. */
     vTaskStartScheduler();

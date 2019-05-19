@@ -58,7 +58,10 @@
 #include "nvdm.h"
 #endif
 
+#if configUSE_TICKLESS_IDLE == 2
+#include "hal_sleep_manager.h"
 extern void tickless_init(void);
+#endif
 
 /**
 * @brief       This function is low-level libc implementation, which is used for printf family.

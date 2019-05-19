@@ -57,7 +57,7 @@ extern uint32_t SystemCoreClock;
 #define configTICK_RATE_HZ				( ( TickType_t ) 1000 )
 #define configMAX_PRIORITIES			( 20 )
 #define configMINIMAL_STACK_SIZE		( ( unsigned short ) 256 )
-#define configTOTAL_HEAP_SIZE			( ( size_t ) ( 68 * 1024 ) )
+#define configTOTAL_HEAP_SIZE			( ( size_t ) ( 64 * 1024 ) )
 #define configMAX_TASK_NAME_LEN			( 6 )
 #define configUSE_TRACE_FACILITY		1
 #define configUSE_16_BIT_TICKS			0
@@ -69,10 +69,9 @@ extern uint32_t SystemCoreClock;
 #define configUSE_MALLOC_FAILED_HOOK	0
 #define configUSE_APPLICATION_TASK_TAG	0
 #define configUSE_COUNTING_SEMAPHORES	1
-#define configUSE_TICKLESS_IDLE 		2
+#define configUSE_TICKLESS_IDLE 		0
 //#define configUSE_PORT_OPTIMISED_TASK_SELECTION 1
 #define configUSE_STATS_FORMATTING_FUNCTIONS 1
-#define configUSE_QUEUE_SETS              1
 
 /*MTK_OS_CPU_UTILIZATION_ENABLE: This definition determines whether enable CPU utilization profiling feature, if enabled, can use AT command on MT25x3 or CLI command on MT76x7 to do CPU utilization profiling.*/
 #if defined(MTK_OS_CPU_UTILIZATION_ENABLE)

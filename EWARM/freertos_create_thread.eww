@@ -2,7 +2,7 @@
 
 <workspace>
   <project>
-    <path>$WS_DIR$\freertos_initialize_main_features.ewp</path>
+    <path>$WS_DIR$\freertos_create_thread.ewp</path>
   </project>
   <batchBuild/>
 </workspace>

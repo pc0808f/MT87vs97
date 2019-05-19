@@ -64,28 +64,6 @@ typedef enum {
 #define XXXX_QUEUE_LENGTH  16
 */
 
-/* for wifi net task */
-#define UNIFY_NET_TASK_NAME                 "net"
-#define UNIFY_NET_TASK_STACKSIZE            (1024*4) /*unit byte!*/
-#define UNIFY_NET_TASK_PRIO                 TASK_PRIORITY_HIGH
-#define UNIFY_NET_QUEUE_LENGTH              16
-
-/* for wifi inband task */
-#define UNIFY_INBAND_TASK_NAME              "inband"
-#define UNIFY_INBAND_TASK_STACKSIZE         (1024*4) /*unit byte!*/
-#define UNIFY_INBAND_TASK_PRIO              TASK_PRIORITY_HIGH
-#define UNIFY_INBAND_QUEUE_LENGTH           16
-
-/* for wifi supplicant task */
-#define UNIFY_WPA_SUPPLICANT_TASK_NAME        "wpa_supplicant"
-#define UNIFY_WPA_SUPPLICANT_TASK_STACKSIZE   (2048*4) /*unit byte!*/
-#define UNIFY_WPA_SUPPLICANT_TASK_PRIO        TASK_PRIORITY_ABOVE_NORMAL
-
-/* for lwIP task */
-#define TCPIP_THREAD_NAME              "lwIP"
-#define TCPIP_THREAD_STACKSIZE         (512 * 4)
-#define TCPIP_THREAD_PRIO              TASK_PRIORITY_HIGH
-
 /* syslog task definition */
 #define SYSLOG_TASK_NAME "SYSLOG"
 /*This definition determines whether the port service feature is enabled. If it is not defined, then the port service feature is not supported.*/
@@ -102,17 +80,15 @@ typedef enum {
 #define SYSLOG_QUEUE_LENGTH 512
 #endif
 
-/* for dhcpd task */
-#define DHCPD_TASK_NAME                 "dhcpd"
-#define DHCPD_TASK_STACKSIZE            (1024)
-#define DHCPD_TASK_PRIO                 TASK_PRIORITY_NORMAL
+/* part_2: Application and customer tasks configure information */
+/* currently, only UI task and tasks to show example project function which define in apps/project/src/main.c */
+
+/* for Application task */
+#define FREERTOS_EXAMPLE_TASK_NAME         "freertos_example"
+#define FREERTOS_EXAMPLE_TASK_STACKSIZE    768
+#define FREERTOS_EXAMPLE_TASK_PRIO         TASK_PRIORITY_LOW
 
 
-/* for set n9log cli task */
-#define N9LOG_TASK_NAME                 "n9log"
-#define N9LOG_TASK_STACKSIZE            (512)
-#define MAX_N9LOG_SIZE                  (1024)
-#define N9LOG_TASK_PRIO                 TASK_PRIORITY_LOW
 
 #endif
 
